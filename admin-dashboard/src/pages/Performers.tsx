@@ -42,6 +42,8 @@ export default function Performers() {
     location: '',
     imageUrl: '',
   })
+  const [selectedIds, setSelectedIds] = useState<string[]>([])
+  const [selectionMode, setSelectionMode] = useState(false)
 
   useEffect(() => {
     fetchPerformers()
@@ -95,6 +97,33 @@ export default function Performers() {
         console.error('Error deleting performer:', error)
       }
     }
+  }
+
+  const handleBulkDelete = async () => {
+    if (window.confirm(`هل أنت متأكد من حذف ${selectedIds.length} مؤدي؟`)) {
+      try {
+        await Promise.all(selectedIds.map(id => api.delete(`/performers/${id}`)))
+        setSelectedIds([])
+        setSelectionMode(false)
+        fetchPerformers()
+      } catch (error) {
+        console.error('Error bulk deleting performers:', error)
+      }
+    }
+  }
+
+  const toggleSelection = (id: string) => {
+    setSelectedIds(prev =>
+      prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]
+    )
+  }
+
+  const selectAll = () => {
+    setSelectedIds(performers.map(p => p.id))
+  }
+
+  const deselectAll = () => {
+    setSelectedIds([])
   }
 
   const [sortBy, setSortBy] = useState('newest')

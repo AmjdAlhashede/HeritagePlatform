@@ -59,4 +59,28 @@ export class PerformersService {
     performer.isActive = false;
     return this.performersRepository.save(performer);
   }
+
+  async getPerformerContent(performerId: string, page = 1, limit = 20) {
+    const performer = await this.findOne(performerId);
+    
+    const [content, total] = await this.performersRepository
+      .createQueryBuilder('performer')
+      .leftJoinAndSelect('performer.content', 'content')
+      .where('performer.id = :performerId', { performerId })
+      .andWhere('content.isActive = :isActive', { isActive: true })
+      .skip((page - 1) * limit)
+      .take(limit)
+      .orderBy('content.createdAt', 'DESC')
+      .getManyAndCount();
+
+    return {
+      data: content[0]?.content || [],
+      meta: {
+        total,
+        page,
+        limit,
+        totalPages: Math.ceil(total / limit),
+      },
+    };
+  }
 }

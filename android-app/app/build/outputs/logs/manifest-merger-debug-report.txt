@@ -14,8 +14,8 @@ MERGED from [androidx.navigation:navigation-compose-android:2.9.6] C:\Users\amjd
 MERGED from [androidx.compose.material3:material3-android:1.4.0] C:\Users\amjda\.gradle\caches\8.14.3\transforms\a56440baf1dbc3af4f346397366989d5\transformed\jetified-material3\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.compose.material:material-android:1.9.4] C:\Users\amjda\.gradle\caches\8.14.3\transforms\a7331e878c73ead0e1f632f7a5a54f0e\transformed\jetified-material\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.material:material-ripple-android:1.9.4] C:\Users\amjda\.gradle\caches\8.14.3\transforms\a589c85ab00e610e0e3260137400ee8f\transformed\jetified-material-ripple\AndroidManifest.xml:2:1-7:12
-MERGED from [io.coil-kt.coil3:coil-compose-android:3.0.4] C:\Users\amjda\.gradle\caches\8.14.3\transforms\d116429296c762ad87cbfc05ec9dd063\transformed\jetified-coil-compose-release\AndroidManifest.xml:2:1-7:12
-MERGED from [io.coil-kt.coil3:coil-compose-core-android:3.0.4] C:\Users\amjda\.gradle\caches\8.14.3\transforms\c3231621ef2aaa4b5cabbc7d57daa4ba\transformed\jetified-coil-compose-core-release\AndroidManifest.xml:2:1-7:12
+MERGED from [io.coil-kt.coil3:coil-compose-android:3.3.0] C:\Users\amjda\.gradle\caches\8.14.3\transforms\6e7cfa82b49bf918c2464e3720b5d477\transformed\jetified-coil-compose-release\AndroidManifest.xml:2:1-7:12
+MERGED from [io.coil-kt.coil3:coil-compose-core-android:3.3.0] C:\Users\amjda\.gradle\caches\8.14.3\transforms\0cb6e8f7f13b50a1e255e6507a7ad0b2\transformed\jetified-coil-compose-core-release\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.foundation:foundation-android:1.9.4] C:\Users\amjda\.gradle\caches\8.14.3\transforms\14777e938ca6101c7cab73ae32457add\transformed\jetified-foundation-release\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.foundation:foundation-layout-android:1.9.4] C:\Users\amjda\.gradle\caches\8.14.3\transforms\493fe85df0b239257221869cc71144cf\transformed\jetified-foundation-layout\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.animation:animation-core-android:1.9.4] C:\Users\amjda\.gradle\caches\8.14.3\transforms\488694a658a5a9591a02bb8e3983ef93\transformed\jetified-animation-core\AndroidManifest.xml:2:1-7:12
@@ -45,10 +45,10 @@ MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\amjda\.gradle\caches\8
 MERGED from [androidx.customview:customview:1.0.0] C:\Users\amjda\.gradle\caches\8.14.3\transforms\904d4d30f1d5651a3632d4872a41ecc6\transformed\customview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.autofill:autofill:1.0.0] C:\Users\amjda\.gradle\caches\8.14.3\transforms\5c10836540e4b394def8c84f35cc6663\transformed\jetified-autofill-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.graphics:graphics-path:1.0.1] C:\Users\amjda\.gradle\caches\8.14.3\transforms\19ad67be6fce0ab24cacdd443aed94a4\transformed\jetified-graphics-path-1.0.1\AndroidManifest.xml:2:1-7:12
-MERGED from [io.coil-kt.coil3:coil-android:3.0.4] C:\Users\amjda\.gradle\caches\8.14.3\transforms\69b0ff714f1202b3ef6f354a8663aebe\transformed\jetified-coil-release\AndroidManifest.xml:2:1-7:12
-MERGED from [io.coil-kt.coil3:coil-network-core-android:3.0.4] C:\Users\amjda\.gradle\caches\8.14.3\transforms\00fed9598632c7103a5986e2cbd2f310\transformed\jetified-coil-network-core-release\AndroidManifest.xml:2:1-7:12
-MERGED from [io.coil-kt.coil3:coil-core-android:3.0.4] C:\Users\amjda\.gradle\caches\8.14.3\transforms\00271bf1b562d00b17f6b5d7cd4e40f6\transformed\jetified-coil-core-release\AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.appcompat:appcompat-resources:1.7.0] C:\Users\amjda\.gradle\caches\8.14.3\transforms\077f20ec851955c8b1909e16a84f89e0\transformed\jetified-appcompat-resources-1.7.0\AndroidManifest.xml:2:1-7:12
+MERGED from [io.coil-kt.coil3:coil-android:3.3.0] C:\Users\amjda\.gradle\caches\8.14.3\transforms\f748be801427ae2a02fcd9174c49fc5b\transformed\jetified-coil-release\AndroidManifest.xml:2:1-7:12
+MERGED from [io.coil-kt.coil3:coil-network-core-android:3.3.0] C:\Users\amjda\.gradle\caches\8.14.3\transforms\3202e54328d99daf5ace31e348421a4e\transformed\jetified-coil-network-core-release\AndroidManifest.xml:2:1-7:12
+MERGED from [io.coil-kt.coil3:coil-core-android:3.3.0] C:\Users\amjda\.gradle\caches\8.14.3\transforms\26b53e113d29a4f4fb9cc2910ad3ffb7\transformed\jetified-coil-core-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.appcompat:appcompat-resources:1.7.1] C:\Users\amjda\.gradle\caches\8.14.3\transforms\9754c5753eea963d99b82a39f27d7ac1\transformed\jetified-appcompat-resources-1.7.1\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.emoji2:emoji2:1.4.0] C:\Users\amjda\.gradle\caches\8.14.3\transforms\906d619bc6b7dc116f033f2d4d5e8698\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:17:1-35:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\amjda\.gradle\caches\8.14.3\transforms\ab25026bf84b9e2dc97d025089da135f\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\amjda\.gradle\caches\8.14.3\transforms\ed89bc8aa478f974f55491fc9aed4eb0\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
@@ -75,7 +75,7 @@ MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.9.4] C:\Users\am
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose-android:2.9.4] C:\Users\amjda\.gradle\caches\8.14.3\transforms\7856a0d527391c0036cb63d8068156bd\transformed\jetified-lifecycle-viewmodel-compose-release\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.material:material-icons-extended-android:1.7.8] C:\Users\amjda\.gradle\caches\8.14.3\transforms\b49fddfa608652b63bf12aad18fc0557\transformed\jetified-material-icons-extended-release\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.material:material-icons-core-android:1.7.8] C:\Users\amjda\.gradle\caches\8.14.3\transforms\836514bf01a452d0c5f2616a86e5a6fd\transformed\jetified-material-icons-core-release\AndroidManifest.xml:2:1-7:12
-MERGED from [com.google.accompanist:accompanist-drawablepainter:0.36.0] C:\Users\amjda\.gradle\caches\8.14.3\transforms\30eefa12887e99f138e95a7c6ff534a2\transformed\jetified-accompanist-drawablepainter-0.36.0\AndroidManifest.xml:17:1-23:12
+MERGED from [com.google.accompanist:accompanist-drawablepainter:0.37.3] C:\Users\amjda\.gradle\caches\8.14.3\transforms\9afb8af8929a46286dedadb12f351d8c\transformed\jetified-accompanist-drawablepainter-0.37.3\AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.compose.ui:ui-android:1.9.4] C:\Users\amjda\.gradle\caches\8.14.3\transforms\dcd2c17532eabbe785f48bd459fb5cee\transformed\jetified-ui-release\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.ui:ui-test-manifest:1.9.4] C:\Users\amjda\.gradle\caches\8.14.3\transforms\970d0391c18fefee6e95246c4dfa166c\transformed\jetified-ui-test-manifest-1.9.4\AndroidManifest.xml:17:1-29:12
 MERGED from [androidx.activity:activity:1.11.0] C:\Users\amjda\.gradle\caches\8.14.3\transforms\f038efebd48ee28128549f0faeb3e20c\transformed\jetified-activity-1.11.0\AndroidManifest.xml:17:1-22:12
@@ -99,7 +99,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\am
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\amjda\.gradle\caches\8.14.3\transforms\c74ff43fd1da0f8a96432f36e40525fc\transformed\core-runtime-2.2.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.sqlite:sqlite-framework-android:2.6.1] C:\Users\amjda\.gradle\caches\8.14.3\transforms\436dbbb0ab771b7958ab23b8e70a2f2d\transformed\jetified-sqlite-framework\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.sqlite:sqlite-android:2.6.1] C:\Users\amjda\.gradle\caches\8.14.3\transforms\b012199ddd5343276219e0181d45cfec\transformed\jetified-sqlite\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.exifinterface:exifinterface:1.3.7] C:\Users\amjda\.gradle\caches\8.14.3\transforms\9b5c3bae5c094dfab93850813d79697a\transformed\exifinterface-1.3.7\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.exifinterface:exifinterface:1.4.1] C:\Users\amjda\.gradle\caches\8.14.3\transforms\7f1f721f0b23e1f5097126ea0009b688\transformed\exifinterface-1.4.1\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.dagger:dagger-lint-aar:2.57.2] C:\Users\amjda\.gradle\caches\8.14.3\transforms\2afdf93ef3746bfbada400704a3ed4e3\transformed\jetified-dagger-lint-aar-2.57.2\AndroidManifest.xml:16:1-19:12
 	package
 		INJECTED from C:\Users\amjda\MyProjects\ZawamelPlatform\android-app\app\src\main\AndroidManifest.xml
@@ -216,10 +216,10 @@ MERGED from [androidx.compose.material:material-android:1.9.4] C:\Users\amjda\.g
 MERGED from [androidx.compose.material:material-android:1.9.4] C:\Users\amjda\.gradle\caches\8.14.3\transforms\a7331e878c73ead0e1f632f7a5a54f0e\transformed\jetified-material\AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.material:material-ripple-android:1.9.4] C:\Users\amjda\.gradle\caches\8.14.3\transforms\a589c85ab00e610e0e3260137400ee8f\transformed\jetified-material-ripple\AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.material:material-ripple-android:1.9.4] C:\Users\amjda\.gradle\caches\8.14.3\transforms\a589c85ab00e610e0e3260137400ee8f\transformed\jetified-material-ripple\AndroidManifest.xml:5:5-44
-MERGED from [io.coil-kt.coil3:coil-compose-android:3.0.4] C:\Users\amjda\.gradle\caches\8.14.3\transforms\d116429296c762ad87cbfc05ec9dd063\transformed\jetified-coil-compose-release\AndroidManifest.xml:5:5-44
-MERGED from [io.coil-kt.coil3:coil-compose-android:3.0.4] C:\Users\amjda\.gradle\caches\8.14.3\transforms\d116429296c762ad87cbfc05ec9dd063\transformed\jetified-coil-compose-release\AndroidManifest.xml:5:5-44
-MERGED from [io.coil-kt.coil3:coil-compose-core-android:3.0.4] C:\Users\amjda\.gradle\caches\8.14.3\transforms\c3231621ef2aaa4b5cabbc7d57daa4ba\transformed\jetified-coil-compose-core-release\AndroidManifest.xml:5:5-44
-MERGED from [io.coil-kt.coil3:coil-compose-core-android:3.0.4] C:\Users\amjda\.gradle\caches\8.14.3\transforms\c3231621ef2aaa4b5cabbc7d57daa4ba\transformed\jetified-coil-compose-core-release\AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt.coil3:coil-compose-android:3.3.0] C:\Users\amjda\.gradle\caches\8.14.3\transforms\6e7cfa82b49bf918c2464e3720b5d477\transformed\jetified-coil-compose-release\AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt.coil3:coil-compose-android:3.3.0] C:\Users\amjda\.gradle\caches\8.14.3\transforms\6e7cfa82b49bf918c2464e3720b5d477\transformed\jetified-coil-compose-release\AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt.coil3:coil-compose-core-android:3.3.0] C:\Users\amjda\.gradle\caches\8.14.3\transforms\0cb6e8f7f13b50a1e255e6507a7ad0b2\transformed\jetified-coil-compose-core-release\AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt.coil3:coil-compose-core-android:3.3.0] C:\Users\amjda\.gradle\caches\8.14.3\transforms\0cb6e8f7f13b50a1e255e6507a7ad0b2\transformed\jetified-coil-compose-core-release\AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.foundation:foundation-android:1.9.4] C:\Users\amjda\.gradle\caches\8.14.3\transforms\14777e938ca6101c7cab73ae32457add\transformed\jetified-foundation-release\AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.foundation:foundation-android:1.9.4] C:\Users\amjda\.gradle\caches\8.14.3\transforms\14777e938ca6101c7cab73ae32457add\transformed\jetified-foundation-release\AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.foundation:foundation-layout-android:1.9.4] C:\Users\amjda\.gradle\caches\8.14.3\transforms\493fe85df0b239257221869cc71144cf\transformed\jetified-foundation-layout\AndroidManifest.xml:5:5-44
@@ -278,14 +278,14 @@ MERGED from [androidx.autofill:autofill:1.0.0] C:\Users\amjda\.gradle\caches\8.1
 MERGED from [androidx.autofill:autofill:1.0.0] C:\Users\amjda\.gradle\caches\8.14.3\transforms\5c10836540e4b394def8c84f35cc6663\transformed\jetified-autofill-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.graphics:graphics-path:1.0.1] C:\Users\amjda\.gradle\caches\8.14.3\transforms\19ad67be6fce0ab24cacdd443aed94a4\transformed\jetified-graphics-path-1.0.1\AndroidManifest.xml:5:5-44
 MERGED from [androidx.graphics:graphics-path:1.0.1] C:\Users\amjda\.gradle\caches\8.14.3\transforms\19ad67be6fce0ab24cacdd443aed94a4\transformed\jetified-graphics-path-1.0.1\AndroidManifest.xml:5:5-44
-MERGED from [io.coil-kt.coil3:coil-android:3.0.4] C:\Users\amjda\.gradle\caches\8.14.3\transforms\69b0ff714f1202b3ef6f354a8663aebe\transformed\jetified-coil-release\AndroidManifest.xml:5:5-44
-MERGED from [io.coil-kt.coil3:coil-android:3.0.4] C:\Users\amjda\.gradle\caches\8.14.3\transforms\69b0ff714f1202b3ef6f354a8663aebe\transformed\jetified-coil-release\AndroidManifest.xml:5:5-44
-MERGED from [io.coil-kt.coil3:coil-network-core-android:3.0.4] C:\Users\amjda\.gradle\caches\8.14.3\transforms\00fed9598632c7103a5986e2cbd2f310\transformed\jetified-coil-network-core-release\AndroidManifest.xml:5:5-44
-MERGED from [io.coil-kt.coil3:coil-network-core-android:3.0.4] C:\Users\amjda\.gradle\caches\8.14.3\transforms\00fed9598632c7103a5986e2cbd2f310\transformed\jetified-coil-network-core-release\AndroidManifest.xml:5:5-44
-MERGED from [io.coil-kt.coil3:coil-core-android:3.0.4] C:\Users\amjda\.gradle\caches\8.14.3\transforms\00271bf1b562d00b17f6b5d7cd4e40f6\transformed\jetified-coil-core-release\AndroidManifest.xml:5:5-44
-MERGED from [io.coil-kt.coil3:coil-core-android:3.0.4] C:\Users\amjda\.gradle\caches\8.14.3\transforms\00271bf1b562d00b17f6b5d7cd4e40f6\transformed\jetified-coil-core-release\AndroidManifest.xml:5:5-44
-MERGED from [androidx.appcompat:appcompat-resources:1.7.0] C:\Users\amjda\.gradle\caches\8.14.3\transforms\077f20ec851955c8b1909e16a84f89e0\transformed\jetified-appcompat-resources-1.7.0\AndroidManifest.xml:5:5-44
-MERGED from [androidx.appcompat:appcompat-resources:1.7.0] C:\Users\amjda\.gradle\caches\8.14.3\transforms\077f20ec851955c8b1909e16a84f89e0\transformed\jetified-appcompat-resources-1.7.0\AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt.coil3:coil-android:3.3.0] C:\Users\amjda\.gradle\caches\8.14.3\transforms\f748be801427ae2a02fcd9174c49fc5b\transformed\jetified-coil-release\AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt.coil3:coil-android:3.3.0] C:\Users\amjda\.gradle\caches\8.14.3\transforms\f748be801427ae2a02fcd9174c49fc5b\transformed\jetified-coil-release\AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt.coil3:coil-network-core-android:3.3.0] C:\Users\amjda\.gradle\caches\8.14.3\transforms\3202e54328d99daf5ace31e348421a4e\transformed\jetified-coil-network-core-release\AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt.coil3:coil-network-core-android:3.3.0] C:\Users\amjda\.gradle\caches\8.14.3\transforms\3202e54328d99daf5ace31e348421a4e\transformed\jetified-coil-network-core-release\AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt.coil3:coil-core-android:3.3.0] C:\Users\amjda\.gradle\caches\8.14.3\transforms\26b53e113d29a4f4fb9cc2910ad3ffb7\transformed\jetified-coil-core-release\AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt.coil3:coil-core-android:3.3.0] C:\Users\amjda\.gradle\caches\8.14.3\transforms\26b53e113d29a4f4fb9cc2910ad3ffb7\transformed\jetified-coil-core-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.7.1] C:\Users\amjda\.gradle\caches\8.14.3\transforms\9754c5753eea963d99b82a39f27d7ac1\transformed\jetified-appcompat-resources-1.7.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.7.1] C:\Users\amjda\.gradle\caches\8.14.3\transforms\9754c5753eea963d99b82a39f27d7ac1\transformed\jetified-appcompat-resources-1.7.1\AndroidManifest.xml:5:5-44
 MERGED from [androidx.emoji2:emoji2:1.4.0] C:\Users\amjda\.gradle\caches\8.14.3\transforms\906d619bc6b7dc116f033f2d4d5e8698\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:21:5-44
 MERGED from [androidx.emoji2:emoji2:1.4.0] C:\Users\amjda\.gradle\caches\8.14.3\transforms\906d619bc6b7dc116f033f2d4d5e8698\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:21:5-44
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\amjda\.gradle\caches\8.14.3\transforms\ab25026bf84b9e2dc97d025089da135f\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
@@ -338,8 +338,8 @@ MERGED from [androidx.compose.material:material-icons-extended-android:1.7.8] C:
 MERGED from [androidx.compose.material:material-icons-extended-android:1.7.8] C:\Users\amjda\.gradle\caches\8.14.3\transforms\b49fddfa608652b63bf12aad18fc0557\transformed\jetified-material-icons-extended-release\AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.material:material-icons-core-android:1.7.8] C:\Users\amjda\.gradle\caches\8.14.3\transforms\836514bf01a452d0c5f2616a86e5a6fd\transformed\jetified-material-icons-core-release\AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.material:material-icons-core-android:1.7.8] C:\Users\amjda\.gradle\caches\8.14.3\transforms\836514bf01a452d0c5f2616a86e5a6fd\transformed\jetified-material-icons-core-release\AndroidManifest.xml:5:5-44
-MERGED from [com.google.accompanist:accompanist-drawablepainter:0.36.0] C:\Users\amjda\.gradle\caches\8.14.3\transforms\30eefa12887e99f138e95a7c6ff534a2\transformed\jetified-accompanist-drawablepainter-0.36.0\AndroidManifest.xml:21:5-44
-MERGED from [com.google.accompanist:accompanist-drawablepainter:0.36.0] C:\Users\amjda\.gradle\caches\8.14.3\transforms\30eefa12887e99f138e95a7c6ff534a2\transformed\jetified-accompanist-drawablepainter-0.36.0\AndroidManifest.xml:21:5-44
+MERGED from [com.google.accompanist:accompanist-drawablepainter:0.37.3] C:\Users\amjda\.gradle\caches\8.14.3\transforms\9afb8af8929a46286dedadb12f351d8c\transformed\jetified-accompanist-drawablepainter-0.37.3\AndroidManifest.xml:21:5-44
+MERGED from [com.google.accompanist:accompanist-drawablepainter:0.37.3] C:\Users\amjda\.gradle\caches\8.14.3\transforms\9afb8af8929a46286dedadb12f351d8c\transformed\jetified-accompanist-drawablepainter-0.37.3\AndroidManifest.xml:21:5-44
 MERGED from [androidx.compose.ui:ui-android:1.9.4] C:\Users\amjda\.gradle\caches\8.14.3\transforms\dcd2c17532eabbe785f48bd459fb5cee\transformed\jetified-ui-release\AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.ui:ui-android:1.9.4] C:\Users\amjda\.gradle\caches\8.14.3\transforms\dcd2c17532eabbe785f48bd459fb5cee\transformed\jetified-ui-release\AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.ui:ui-test-manifest:1.9.4] C:\Users\amjda\.gradle\caches\8.14.3\transforms\970d0391c18fefee6e95246c4dfa166c\transformed\jetified-ui-test-manifest-1.9.4\AndroidManifest.xml:20:5-44
@@ -386,8 +386,8 @@ MERGED from [androidx.sqlite:sqlite-framework-android:2.6.1] C:\Users\amjda\.gra
 MERGED from [androidx.sqlite:sqlite-framework-android:2.6.1] C:\Users\amjda\.gradle\caches\8.14.3\transforms\436dbbb0ab771b7958ab23b8e70a2f2d\transformed\jetified-sqlite-framework\AndroidManifest.xml:20:5-44
 MERGED from [androidx.sqlite:sqlite-android:2.6.1] C:\Users\amjda\.gradle\caches\8.14.3\transforms\b012199ddd5343276219e0181d45cfec\transformed\jetified-sqlite\AndroidManifest.xml:20:5-44
 MERGED from [androidx.sqlite:sqlite-android:2.6.1] C:\Users\amjda\.gradle\caches\8.14.3\transforms\b012199ddd5343276219e0181d45cfec\transformed\jetified-sqlite\AndroidManifest.xml:20:5-44
-MERGED from [androidx.exifinterface:exifinterface:1.3.7] C:\Users\amjda\.gradle\caches\8.14.3\transforms\9b5c3bae5c094dfab93850813d79697a\transformed\exifinterface-1.3.7\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.exifinterface:exifinterface:1.3.7] C:\Users\amjda\.gradle\caches\8.14.3\transforms\9b5c3bae5c094dfab93850813d79697a\transformed\exifinterface-1.3.7\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.4.1] C:\Users\amjda\.gradle\caches\8.14.3\transforms\7f1f721f0b23e1f5097126ea0009b688\transformed\exifinterface-1.4.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.4.1] C:\Users\amjda\.gradle\caches\8.14.3\transforms\7f1f721f0b23e1f5097126ea0009b688\transformed\exifinterface-1.4.1\AndroidManifest.xml:5:5-44
 MERGED from [com.google.dagger:dagger-lint-aar:2.57.2] C:\Users\amjda\.gradle\caches\8.14.3\transforms\2afdf93ef3746bfbada400704a3ed4e3\transformed\jetified-dagger-lint-aar-2.57.2\AndroidManifest.xml:18:3-42
 MERGED from [com.google.dagger:dagger-lint-aar:2.57.2] C:\Users\amjda\.gradle\caches\8.14.3\transforms\2afdf93ef3746bfbada400704a3ed4e3\transformed\jetified-dagger-lint-aar-2.57.2\AndroidManifest.xml:18:3-42
 	android:targetSdkVersion

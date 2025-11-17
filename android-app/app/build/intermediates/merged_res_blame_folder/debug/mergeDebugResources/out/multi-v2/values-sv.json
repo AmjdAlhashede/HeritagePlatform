@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.heritage.app-mergeDebugResources-53:/values-sv/values-sv.xml",
+            "outputFile": "com.heritage.app-mergeDebugResources-54:/values-sv/values-sv.xml",
             "map": [
                 {
                     "source": "C:\\Users\\amjda\\.gradle\\caches\\8.14.3\\transforms\\a7331e878c73ead0e1f632f7a5a54f0e\\transformed\\jetified-material\\res\\values-sv\\values-sv.xml",

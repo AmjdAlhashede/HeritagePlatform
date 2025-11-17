@@ -19,38 +19,54 @@ private val LightColorScheme = lightColorScheme(
     primary = Primary,
     onPrimary = OnPrimary,
     primaryContainer = PrimaryLight,
+    onPrimaryContainer = PrimaryDark,
     secondary = Secondary,
     onSecondary = OnSecondary,
-    secondaryContainer = SecondaryDark,
+    secondaryContainer = SecondaryLight,
+    onSecondaryContainer = SecondaryDark,
+    tertiary = Tertiary,
+    onTertiary = OnPrimary,
     background = Background,
     onBackground = OnBackground,
     surface = Surface,
     onSurface = OnSurface,
+    surfaceVariant = SurfaceVariant,
+    onSurfaceVariant = OnSurfaceVariant,
     error = Error,
     onError = OnError,
+    outline = Divider,
+    outlineVariant = SurfaceVariant,
 )
 
 private val DarkColorScheme = darkColorScheme(
     primary = PrimaryDarkTheme,
-    onPrimary = OnPrimary,
+    onPrimary = PrimaryDark,
     primaryContainer = PrimaryDarkThemeDark,
-    secondary = Secondary,
-    onSecondary = OnSecondary,
+    onPrimaryContainer = PrimaryDarkTheme,
+    secondary = SecondaryDarkTheme,
+    onSecondary = SecondaryDark,
+    secondaryContainer = SecondaryDark,
+    onSecondaryContainer = SecondaryDarkTheme,
+    tertiary = TertiaryDarkTheme,
+    onTertiary = PrimaryDark,
     background = BackgroundDark,
     onBackground = OnBackgroundDark,
     surface = SurfaceDark,
     onSurface = OnSurfaceDark,
+    surfaceVariant = SurfaceVariantDark,
+    onSurfaceVariant = OnSurfaceVariantDark,
     error = Error,
     onError = OnError,
+    outline = DividerDark,
+    outlineVariant = SurfaceVariantDark,
 )
 
 @Composable
 fun HeritageTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    dynamicColor: Boolean = true,
+    dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
-
     val colorScheme = when {
         dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
             val context = LocalContext.current

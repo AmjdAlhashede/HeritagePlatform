@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.heritage.app-mergeDebugResources-53:/values-az/values-az.xml",
+            "outputFile": "com.heritage.app-mergeDebugResources-54:/values-az/values-az.xml",
             "map": [
                 {
                     "source": "C:\\Users\\amjda\\.gradle\\caches\\8.14.3\\transforms\\dcd2c17532eabbe785f48bd459fb5cee\\transformed\\jetified-ui-release\\res\\values-az\\values-az.xml",

@@ -17,6 +17,15 @@ export class PerformersController {
     return this.performersService.findOne(id);
   }
 
+  @Get(':id/content')
+  getPerformerContent(
+    @Param('id') id: string,
+    @Query('page') page = 1,
+    @Query('limit') limit = 20,
+  ) {
+    return this.performersService.getPerformerContent(id, +page, +limit);
+  }
+
   @Post()
   @UseGuards(JwtAuthGuard)
   create(@Body() createPerformerDto: CreatePerformerDto) {

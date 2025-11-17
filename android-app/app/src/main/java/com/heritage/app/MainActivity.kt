@@ -21,7 +21,6 @@ class MainActivity : ComponentActivity() {
             HeritageTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
                 ) {
                     HeritageNavigation()
                 }

@@ -32,6 +32,7 @@ export default function Content() {
   const [open, setOpen] = useState(false)
   const [sortBy, setSortBy] = useState('newest')
   const [filterType, setFilterType] = useState('all')
+  const [filterStatus, setFilterStatus] = useState('all')
   const [currentContent, setCurrentContent] = useState({
     title: '',
     description: '',
@@ -118,7 +119,14 @@ export default function Content() {
   }
 
   const filteredAndSortedContent = content
-    .filter((item) => filterType === 'all' || item.type === filterType)
+    .filter((item) => {
+      // Filter by type
+      if (filterType !== 'all' && item.type !== filterType) return false
+      // Filter by status
+      if (filterStatus === 'published' && !item.isProcessed) return false
+      if (filterStatus === 'pending' && item.isProcessed) return false
+      return true
+    })
     .sort((a, b) => {
       switch (sortBy) {
         case 'newest':
@@ -139,6 +147,18 @@ export default function Content() {
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
         <Typography variant="h4">إدارة المحتوى</Typography>
         <Box sx={{ display: 'flex', gap: 2 }}>
+          <FormControl size="small" sx={{ minWidth: 120 }}>
+            <InputLabel>الحالة</InputLabel>
+            <Select
+              value={filterStatus}
+              onChange={(e) => setFilterStatus(e.target.value)}
+              label="الحالة"
+            >
+              <MenuItem value="all">الكل</MenuItem>
+              <MenuItem value="published">منشور</MenuItem>
+              <MenuItem value="pending">في الانتظار</MenuItem>
+            </Select>
+          </FormControl>
           <FormControl size="small" sx={{ minWidth: 120 }}>
             <InputLabel>النوع</InputLabel>
             <Select
@@ -178,6 +198,7 @@ export default function Content() {
               <TableCell>العنوان</TableCell>
               <TableCell>المؤدي</TableCell>
               <TableCell>النوع</TableCell>
+              <TableCell>الحالة</TableCell>
               <TableCell>المدة</TableCell>
               <TableCell>المشاهدات</TableCell>
               <TableCell>التنزيلات</TableCell>
@@ -211,6 +232,13 @@ export default function Content() {
                     <Chip
                       label={item.type === 'video' ? 'فيديو' : 'صوت'}
                       color={item.type === 'video' ? 'primary' : 'secondary'}
+                      size="small"
+                    />
+                  </TableCell>
+                  <TableCell>
+                    <Chip
+                      label={item.isProcessed ? 'منشور' : 'في الانتظار'}
+                      color={item.isProcessed ? 'success' : 'warning'}
                       size="small"
                     />
                   </TableCell>

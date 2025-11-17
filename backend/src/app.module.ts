@@ -3,13 +3,15 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { PerformersModule } from './modules/performers/performers.module';
 import { ContentModule } from './modules/content/content.module';
-
+import { CategoriesModule } from './modules/categories/categories.module';
+import { CommentsModule } from './modules/comments/comments.module';
 import { AnalyticsModule } from './modules/analytics/analytics.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { AdminModule } from './modules/admin/admin.module';
 import { StreamingModule } from './modules/streaming/streaming.module';
 import { UsersModule } from './modules/users/users.module';
 import { LikesModule } from './modules/likes/likes.module';
+import { UploadModule } from './modules/upload/upload.module';
 
 @Module({
   imports: [
@@ -32,12 +34,15 @@ import { LikesModule } from './modules/likes/likes.module';
     }),
     PerformersModule,
     ContentModule,
+    CategoriesModule,
+    CommentsModule,
     StreamingModule,
     AnalyticsModule,
     AuthModule,
     AdminModule,
     UsersModule,
     LikesModule,
+    UploadModule,
   ],
 })
 export class AppModule {}

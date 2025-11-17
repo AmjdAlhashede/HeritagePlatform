@@ -15,6 +15,21 @@ export class ContentController {
     return this.contentService.findAll(+page, +limit, performerId);
   }
 
+  @Get('trending')
+  getTrending(@Query('limit') limit = 10) {
+    return this.contentService.getTrending(+limit);
+  }
+
+  @Get('recommended')
+  getRecommended(@Query('limit') limit = 10) {
+    return this.contentService.getRecommended(+limit);
+  }
+
+  @Get('recent')
+  getRecent(@Query('limit') limit = 10) {
+    return this.contentService.getRecent(+limit);
+  }
+
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.contentService.findOne(id);

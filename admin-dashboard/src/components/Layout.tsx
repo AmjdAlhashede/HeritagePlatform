@@ -32,7 +32,7 @@ const menuItems = [
   { text: 'لوحة التحكم', icon: Dashboard, path: '/' },
   { text: 'المؤدون', icon: People, path: '/performers' },
   { text: 'المحتوى', icon: VideoLibrary, path: '/content' },
-  { text: 'رفع ملفات', icon: Upload, path: '/upload' },
+  { text: 'رفع ونشر', icon: Upload, path: '/upload' },
   { text: 'التحليلات', icon: Analytics, path: '/analytics' },
   { text: 'المسؤولون', icon: AdminPanelSettings, path: '/admins' },
 ]

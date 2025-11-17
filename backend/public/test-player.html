@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار المشغل - HLS</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1a1a1a;
+            color: white;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #4CAF50;
+        }
+        .video-container {
+            background: #000;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .controls {
+            background: #2a2a2a;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #aaa;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #444;
+            background: #333;
+            color: white;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        .stats {
+            background: #2a2a2a;
+            padding: 20px;
+            border-radius: 10px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .stat-item {
+            background: #333;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #4CAF50;
+        }
+        .stat-label {
+            color: #aaa;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+        .stat-value {
+            font-size: 20px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        .quality-indicator {
+            display: inline-block;
+            padding: 5px 10px;
+            background: #4CAF50;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .log {
+            background: #2a2a2a;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            max-height: 300px;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+        }
+        .log-entry {
+            padding: 5px;
+            border-bottom: 1px solid #444;
+            margin-bottom: 5px;
+        }
+        .log-time {
+            color: #888;
+        }
+        .log-quality {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎬 اختبار مشغل HLS - Adaptive Streaming</h1>
+        
+        <div class="controls">
+            <div class="input-group">
+                <label>رابط master.m3u8:</label>
+                <input type="text" id="videoUrl" placeholder="http://localhost:3000/uploads/processed/{id}/hls/master.m3u8">
+            </div>
+            <button onclick="loadVideo()">▶️ تشغيل الفيديو</button>
+        </div>
+
+        <div class="video-container">
+            <video id="video" controls></video>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-label">الدقة الحالية</div>
+                <div class="stat-value" id="currentQuality">-</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">سرعة التحميل</div>
+                <div class="stat-value" id="bandwidth">-</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">البيانات المحملة</div>
+                <div class="stat-value" id="dataLoaded">0 MB</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">الدقات المتاحة</div>
+                <div class="stat-value" id="availableQualities">-</div>
+            </div>
+        </div>
+
+        <div class="controls" style="margin-top: 20px;">
+            <label>اختر الدقة يدوياً:</label>
+            <div style="display: flex; gap: 10px; margin-top: 10px;">
+                <button onclick="setQuality('auto')" style="flex: 1; background: #2196F3;">
+                    🔄 تلقائي (Auto)
+                </button>
+                <button onclick="setQuality(0)" style="flex: 1; background: #FF9800;" id="quality-0">
+                    720p
+                </button>
+                <button onclick="setQuality(1)" style="flex: 1; background: #FF9800;" id="quality-1">
+                    480p
+                </button>
+                <button onclick="setQuality(2)" style="flex: 1; background: #FF9800;" id="quality-2">
+                    360p
+                </button>
+            </div>
+            <p style="color: #aaa; font-size: 12px; margin-top: 10px;">
+                💡 في الوضع التلقائي، المشغل يختار الدقة المناسبة حسب سرعة النت
+            </p>
+        </div>
+
+        <div class="log" id="log">
+            <div class="log-entry">
+                <span class="log-time">[جاهز]</span> أدخل رابط master.m3u8 واضغط تشغيل
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let hls;
+        let totalDataLoaded = 0;
+        let currentLevel = -1;
+
+        function addLog(message, isQualityChange = false) {
+            const log = document.getElementById('log');
+            const time = new Date().toLocaleTimeString('ar-SA');
+            const entry = document.createElement('div');
+            entry.className = 'log-entry';
+            
+            if (isQualityChange) {
+                entry.innerHTML = `<span class="log-time">[${time}]</span> <span class="log-quality">${message}</span>`;
+            } else {
+                entry.innerHTML = `<span class="log-time">[${time}]</span> ${message}`;
+            }
+            
+            log.insertBefore(entry, log.firstChild);
+        }
+
+        function formatBytes(bytes) {
+            return (bytes / (1024 * 1024)).toFixed(2);
+        }
+
+        function loadVideo() {
+            const video = document.getElementById('video');
+            const videoUrl = document.getElementById('videoUrl').value;
+
+            if (!videoUrl) {
+                alert('يرجى إدخال رابط الفيديو');
+                return;
+            }
+
+            addLog('🔄 جاري تحميل الفيديو...');
+
+            if (Hls.isSupported()) {
+                if (hls) {
+                    hls.destroy();
+                }
+
+                hls = new Hls({
+                    debug: false,
+                    enableWorker: true,
+                    lowLatencyMode: true,
+                });
+
+                hls.loadSource(videoUrl);
+                hls.attachMedia(video);
+
+                // عند جاهزية الفيديو
+                hls.on(Hls.Events.MANIFEST_PARSED, function(event, data) {
+                    addLog(`✅ تم تحميل الفيديو بنجاح`);
+                    addLog(`📊 عدد الدقات المتاحة: ${data.levels.length}`);
+                    
+                    const qualities = data.levels.map(level => 
+                        `${level.height}p (${Math.round(level.bitrate/1000)}kbps)`
+                    ).join(', ');
+                    
+                    document.getElementById('availableQualities').textContent = data.levels.length;
+                    addLog(`🎬 الدقات: ${qualities}`);
+                });
+
+                // عند تغيير الدقة
+                hls.on(Hls.Events.LEVEL_SWITCHED, function(event, data) {
+                    const level = hls.levels[data.level];
+                    const quality = `${level.height}p`;
+                    const bitrate = Math.round(level.bitrate / 1000);
+                    
+                    document.getElementById('currentQuality').textContent = quality;
+                    addLog(`🔄 تغيرت الدقة إلى: ${quality} (${bitrate} kbps)`, true);
+                    currentLevel = data.level;
+                });
+
+                // تتبع البيانات المحملة
+                hls.on(Hls.Events.FRAG_LOADED, function(event, data) {
+                    totalDataLoaded += data.frag.stats.total;
+                    document.getElementById('dataLoaded').textContent = 
+                        formatBytes(totalDataLoaded) + ' MB';
+                });
+
+                // تتبع سرعة النت
+                hls.on(Hls.Events.FRAG_LOAD_PROGRESS, function(event, data) {
+                    if (data.stats && data.stats.bw) {
+                        const bandwidth = (data.stats.bw / 1000000).toFixed(2);
+                        document.getElementById('bandwidth').textContent = bandwidth + ' Mbps';
+                    }
+                });
+
+                // الأخطاء
+                hls.on(Hls.Events.ERROR, function(event, data) {
+                    if (data.fatal) {
+                        addLog(`❌ خطأ: ${data.type} - ${data.details}`);
+                    }
+                });
+
+            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                // Safari
+                video.src = videoUrl;
+                addLog('✅ تم تحميل الفيديو (Safari)');
+            } else {
+                alert('المتصفح لا يدعم HLS');
+            }
+        }
+
+        // تحديث الإحصائيات كل ثانية
+        setInterval(() => {
+            if (hls && hls.levels.length > 0 && currentLevel >= 0) {
+                const level = hls.levels[currentLevel];
+                document.getElementById('currentQuality').textContent = `${level.height}p`;
+            }
+        }, 1000);
+
+        // تغيير الدقة يدوياً
+        function setQuality(level) {
+            if (!hls) {
+                alert('يرجى تشغيل الفيديو أولاً');
+                return;
+            }
+
+            if (level === 'auto') {
+                // تلقائي
+                hls.currentLevel = -1;
+                addLog('🔄 تم التبديل للوضع التلقائي', true);
+            } else {
+                // دقة محددة
+                hls.currentLevel = level;
+                const selectedLevel = hls.levels[level];
+                addLog(`🎯 تم اختيار ${selectedLevel.height}p يدوياً`, true);
+            }
+
+            // تحديث أزرار
+            updateQualityButtons();
+        }
+
+        function updateQualityButtons() {
+            if (!hls || hls.levels.length === 0) return;
+
+            // تحديث نصوص الأزرار
+            hls.levels.forEach((level, index) => {
+                const button = document.getElementById(`quality-${index}`);
+                if (button) {
+                    button.textContent = `${level.height}p`;
+                    
+                    // تمييز الدقة الحالية
+                    if (hls.currentLevel === index) {
+                        button.style.background = '#4CAF50';
+                    } else {
+                        button.style.background = '#FF9800';
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

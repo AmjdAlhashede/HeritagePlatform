@@ -1,0 +1,1 @@
+-keep,allowobfuscation,allowshrinking class com.heritage.app.presentation.content_detail.ContentDetailViewModel

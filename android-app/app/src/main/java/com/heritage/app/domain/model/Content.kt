@@ -5,19 +5,33 @@ data class Content(
     val title: String,
     val description: String?,
     val type: ContentType,
-    val originalFileUrl: String,
+    val thumbnailUrl: String?,
     val hlsUrl: String?,
     val audioUrl: String?,
-    val thumbnailUrl: String?,
-    val duration: Int,
-    val fileSize: Long,
+    val duration: Int, // seconds
     val viewCount: Int,
     val downloadCount: Int,
-    val isProcessed: Boolean,
-    val performer: Performer,
-    val createdAt: String
-)
+    val performer: Performer?,
+    val performerId: String,
+    val originalDate: String?,
+    val createdAt: String,
+    val isProcessed: Boolean
+) {
+    val durationFormatted: String
+        get() {
+            val minutes = duration / 60
+            val seconds = duration % 60
+            return String.format("%d:%02d", minutes, seconds)
+        }
+    
+    val isVideo: Boolean
+        get() = type == ContentType.VIDEO
+    
+    val isAudio: Boolean
+        get() = type == ContentType.AUDIO
+}
 
 enum class ContentType {
-    VIDEO, AUDIO
+    VIDEO,
+    AUDIO
 }

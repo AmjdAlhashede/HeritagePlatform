@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.heritage.app-mergeDebugResources-53:/values-ms/values-ms.xml",
+            "outputFile": "com.heritage.app-mergeDebugResources-54:/values-ms/values-ms.xml",
             "map": [
                 {
                     "source": "C:\\Users\\amjda\\.gradle\\caches\\8.14.3\\transforms\\14777e938ca6101c7cab73ae32457add\\transformed\\jetified-foundation-release\\res\\values-ms\\values-ms.xml",

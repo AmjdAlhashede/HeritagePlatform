@@ -1,6 +1,12 @@
 package com.heritage.app;
 
 import com.heritage.app.di.AppModule;
+import com.heritage.app.presentation.downloads.DownloadsViewModel_HiltModules;
+import com.heritage.app.presentation.home.HomeViewModel_HiltModules;
+import com.heritage.app.presentation.performer.PerformerDetailViewModel_HiltModules;
+import com.heritage.app.presentation.performers.PerformersViewModel_HiltModules;
+import com.heritage.app.presentation.player.PlayerViewModel_HiltModules;
+import com.heritage.app.presentation.search.SearchViewModel_HiltModules;
 import dagger.Binds;
 import dagger.Component;
 import dagger.Module;
@@ -153,10 +159,16 @@ public final class HeritageApplication_HiltComponents {
 
   @Subcomponent(
       modules = {
+          DownloadsViewModel_HiltModules.KeyModule.class,
           ActivityCBuilderModule.class,
           ViewModelCBuilderModule.class,
           HiltWrapper_ActivityRetainedComponentManager_LifecycleModule.class,
-          HiltWrapper_ActivitySavedStateHandleModule.class
+          HiltWrapper_ActivitySavedStateHandleModule.class,
+          HomeViewModel_HiltModules.KeyModule.class,
+          PerformerDetailViewModel_HiltModules.KeyModule.class,
+          PerformersViewModel_HiltModules.KeyModule.class,
+          PlayerViewModel_HiltModules.KeyModule.class,
+          SearchViewModel_HiltModules.KeyModule.class
       }
   )
   @ActivityRetainedScoped
@@ -191,7 +203,15 @@ public final class HeritageApplication_HiltComponents {
   }
 
   @Subcomponent(
-      modules = HiltWrapper_HiltViewModelFactory_ViewModelModule.class
+      modules = {
+          DownloadsViewModel_HiltModules.BindsModule.class,
+          HiltWrapper_HiltViewModelFactory_ViewModelModule.class,
+          HomeViewModel_HiltModules.BindsModule.class,
+          PerformerDetailViewModel_HiltModules.BindsModule.class,
+          PerformersViewModel_HiltModules.BindsModule.class,
+          PlayerViewModel_HiltModules.BindsModule.class,
+          SearchViewModel_HiltModules.BindsModule.class
+      }
   )
   @ViewModelScoped
   public abstract static class ViewModelC implements ViewModelComponent,
