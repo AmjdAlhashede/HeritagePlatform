@@ -1,5 +1,6 @@
-import { useState } from 'react'
 import { Outlet, useNavigate, useLocation } from 'react-router-dom'
+import { usePlayer } from '../contexts/PlayerContext'
+import MiniPlayer from './MiniPlayer'
 import {
   AppBar,
   Toolbar,
@@ -72,6 +73,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function Layout() {
   const navigate = useNavigate()
   const location = useLocation()
+  const { currentContent, playing, progress, togglePlay, closePlayer, audioRef, videoRef } = usePlayer()
 
   const getBottomNavValue = () => {
     if (location.pathname === '/') return 0
@@ -79,6 +81,15 @@ export default function Layout() {
     if (location.pathname.startsWith('/search')) return 2
     return 0
   }
+
+  const handleProgressChange = (value: number) => {
+    const mediaElement = currentContent?.type === 'video' ? videoRef.current : audioRef.current
+    if (!mediaElement) return
+    const newTime = (value / 100) * mediaElement.duration
+    mediaElement.currentTime = newTime
+  }
+
+  const showMiniPlayer = currentContent && !location.pathname.startsWith('/content/')
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
@@ -116,9 +127,25 @@ export default function Layout() {
         </Toolbar>
       </AppBar>
 
-      <Container maxWidth="lg" sx={{ flex: 1, py: 4, mb: 8 }}>
+      <Container maxWidth="lg" sx={{ flex: 1, py: 4, mb: showMiniPlayer ? 16 : 8 }}>
         <Outlet />
       </Container>
+
+      {/* Hidden Audio/Video Elements */}
+      <audio ref={audioRef} style={{ display: 'none' }} />
+      <video ref={videoRef} style={{ display: 'none' }} />
+
+      {/* Mini Player */}
+      {showMiniPlayer && (
+        <MiniPlayer
+          content={currentContent}
+          playing={playing}
+          progress={progress}
+          onTogglePlay={togglePlay}
+          onClose={closePlayer}
+          onProgressChange={handleProgressChange}
+        />
+      )}
 
       <Paper
         sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }}

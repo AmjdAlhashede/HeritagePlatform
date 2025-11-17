@@ -1,5 +1,6 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
+import { usePlayer } from '../contexts/PlayerContext'
 import {
   Box,
   Typography,
@@ -68,9 +69,15 @@ export default function ContentDetail() {
   const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
+    // Don't scroll if coming from suggested content
+    const shouldScroll = !sessionStorage.getItem('fromSuggested')
+    if (shouldScroll) {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+    sessionStorage.removeItem('fromSuggested')
+    
     fetchContent()
     fetchSuggested()
-    window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [id])
 
   useEffect(() => {
@@ -154,6 +161,7 @@ export default function ContentDetail() {
 
   const handleLike = () => {
     setLiked(!liked)
+    setLikesCount(liked ? likesCount - 1 : likesCount + 1)
   }
 
   const SuggestedCard = ({ item }: any) => (
@@ -173,6 +181,7 @@ export default function ContentDetail() {
         }}
         onClick={() => {
           setPlaying(false)
+          sessionStorage.setItem('fromSuggested', 'true')
           navigate(`/content/${item.id}`)
         }}
       >
@@ -529,4 +538,8 @@ export default function ContentDetail() {
               ))}
             </Box>
           </Grid>
-       
+        </Grid>
+      </Container>
+    </Fade>
+  )
+}
