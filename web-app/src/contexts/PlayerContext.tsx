@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useRef, ReactNode } from 'react'
+import { createContext, useContext, useState, useRef, useEffect, ReactNode } from 'react'
 
 interface PlayerContextType {
   currentContent: any
@@ -22,6 +22,55 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
   const audioRef = useRef<HTMLAudioElement>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
 
+  // Update progress automatically
+  useEffect(() => {
+    if (!currentContent) return
+    
+    const mediaElement = currentContent.type === 'video' ? videoRef.current : audioRef.current
+    if (!mediaElement) return
+
+    // Load the source
+    if (currentContent.type === 'video') {
+      if (mediaElement.src !== currentContent.originalFileUrl) {
+        mediaElement.src = currentContent.originalFileUrl
+      }
+    } else {
+      if (mediaElement.src !== currentContent.audioUrl) {
+        mediaElement.src = currentContent.audioUrl
+      }
+    }
+
+    const handleTimeUpdate = () => {
+      if (mediaElement.duration > 0) {
+        setProgress((mediaElement.currentTime / mediaElement.duration) * 100)
+      }
+    }
+
+    const handleEnded = () => {
+      setPlaying(false)
+    }
+
+    const handlePlay = () => {
+      setPlaying(true)
+    }
+
+    const handlePause = () => {
+      setPlaying(false)
+    }
+
+    mediaElement.addEventListener('timeupdate', handleTimeUpdate)
+    mediaElement.addEventListener('ended', handleEnded)
+    mediaElement.addEventListener('play', handlePlay)
+    mediaElement.addEventListener('pause', handlePause)
+
+    return () => {
+      mediaElement.removeEventListener('timeupdate', handleTimeUpdate)
+      mediaElement.removeEventListener('ended', handleEnded)
+      mediaElement.removeEventListener('play', handlePlay)
+      mediaElement.removeEventListener('pause', handlePause)
+    }
+  }, [currentContent])
+
   const togglePlay = () => {
     const mediaElement = currentContent?.type === 'video' ? videoRef.current : audioRef.current
     if (!mediaElement) return
@@ -29,9 +78,8 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
     if (playing) {
       mediaElement.pause()
     } else {
-      mediaElement.play()
+      mediaElement.play().catch(err => console.error('Play error:', err))
     }
-    setPlaying(!playing)
   }
 
   const closePlayer = () => {
