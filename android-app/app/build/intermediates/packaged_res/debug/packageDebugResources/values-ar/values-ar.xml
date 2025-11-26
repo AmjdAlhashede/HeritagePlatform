@@ -1,58 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="about">حول</string>
-    <string name="about_performer">نبذة</string>
-    <string name="all_content">جميع المحتوى</string>
-    <string name="app_name">الزوامل</string>
-    <string name="audio">صوت</string>
-    <string name="back">رجوع</string>
-    <string name="cancel">إلغاء</string>
-    <string name="confirm">تأكيد</string>
-    <string name="content">المحتوى</string>
-    <string name="content_count">محتوى</string>
-    <string name="delete">حذف</string>
-    <string name="download">تنزيل</string>
-    <string name="download_complete">اكتمل التنزيل</string>
-    <string name="download_failed">فشل التنزيل</string>
-    <string name="downloaded">تم التنزيل</string>
-    <string name="downloading">جاري التنزيل...</string>
-    <string name="downloads">التنزيلات</string>
-    <string name="downloads_count">تنزيل</string>
-    <string name="error">حدث خطأ</string>
-    <string name="favorites">المفضلة</string>
-    <string name="home">الرئيسية</string>
-    <string name="language">اللغة</string>
-    <string name="loading">جاري التحميل...</string>
-    <string name="next">التالي</string>
-    <string name="no_content_found">لم يتم العثور على محتوى</string>
-    <string name="no_data">لا توجد بيانات</string>
-    <string name="no_downloads">لا توجد تنزيلات بعد</string>
-    <string name="no_favorites">لا توجد مفضلات بعد</string>
-    <string name="no_internet">لا يوجد اتصال بالإنترنت</string>
-    <string name="no_performers">لا يوجد مؤدون</string>
-    <string name="notifications">الإشعارات</string>
-    <string name="now_playing">قيد التشغيل</string>
-    <string name="ok">موافق</string>
-    <string name="pause">إيقاف مؤقت</string>
-    <string name="performer_content">المحتوى</string>
-    <string name="performer_profile">ملف المؤدي</string>
-    <string name="performers">المؤدون</string>
-    <string name="play">تشغيل</string>
-    <string name="popular_performers">المؤدون المشهورون</string>
-    <string name="previous">السابق</string>
-    <string name="profile">الملف الشخصي</string>
-    <string name="recent">الأحدث</string>
-    <string name="recommended">موصى به</string>
-    <string name="repeat">تكرار</string>
-    <string name="retry">إعادة المحاولة</string>
-    <string name="search">بحث</string>
-    <string name="settings">الإعدادات</string>
-    <string name="share">مشاركة</string>
-    <string name="shuffle">عشوائي</string>
-    <string name="theme">المظهر</string>
-    <string name="trending">🔥 الأكثر مشاهدة</string>
-    <string name="try_again">حاول مرة أخرى</string>
-    <string name="version">الإصدار</string>
-    <string name="video">فيديو</string>
-    <string name="views">مشاهدة</string>
-</resources>
