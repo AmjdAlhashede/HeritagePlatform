@@ -9,7 +9,7 @@
             "src": "web-app/package.json",
             "use": "@vercel/static-build",
             "config": {
-                "distDir": "dist"
+                "distDir": "web-app/dist"
             }
         }
     ],
@@ -20,15 +20,15 @@
         },
         {
             "src": "/assets/(.*)",
-            "dest": "/web-app/assets/$1"
+            "dest": "/web-app/dist/assets/$1"
         },
         {
-            "src": "/(.*)\\.(ico|png|svg|jpg|jpeg|css|js|json|txt|xml|webmanifest)",
-            "dest": "/web-app/$1.$2"
+            "src": "/(.*)\\.(ico|png|svg|jpg|jpeg|css|js|json|txt|xml|webmanifest|woff|woff2|ttf)",
+            "dest": "/web-app/dist/$1.$2"
         },
         {
             "src": "/(.*)",
-            "dest": "/web-app/index.html"
+            "dest": "/web-app/dist/index.html"
         }
     ]
 }
