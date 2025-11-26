@@ -21,7 +21,7 @@ export default function Search() {
   const [results, setResults] = useState([])
   const [searching, setSearching] = useState(false)
 
-  const handleSearch = async (searchQuery) => {
+  const handleSearch = async (searchQuery: string) => {
     setQuery(searchQuery)
     if (searchQuery.length < 2) {
       setResults([])
@@ -76,7 +76,7 @@ export default function Search() {
         </Box>
       ) : (
         <Grid container spacing={3}>
-          {results.map((item) => (
+          {results.map((item: any) => (
             <Grid item xs={12} sm={6} md={4} key={item.id}>
               <Card>
                 <CardActionArea onClick={() => navigate(`/content/${item.id}`)}>
@@ -102,7 +102,7 @@ export default function Search() {
                       {item.title}
                     </Typography>
                     <Typography variant="body2" color="text.secondary" noWrap>
-                      {item.performer?.name}
+                      {item.performer?.fullName || item.performer?.shortName || item.performer?.name}
                     </Typography>
                   </CardContent>
                 </CardActionArea>
