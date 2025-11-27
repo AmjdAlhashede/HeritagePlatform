@@ -31,6 +31,8 @@ async function bootstrap() {
       'http://localhost:5173',
       'http://localhost:5174',
       'http://localhost:5175',
+      'https://admin.heritage.orbiscodes.online',
+      'https://heritage.orbiscodes.online',
       process.env.CORS_ORIGIN,
     ].filter(Boolean),
     credentials: true,

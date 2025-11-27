@@ -139,7 +139,8 @@ export class PerformersService {
   }
 
   async getPerformerContent(performerId: string, page = 1, limit = 20) {
-    const performer = await this.findOne(performerId);
+    // التحقق من وجود المؤدي
+    await this.findOne(performerId);
 
     const [content, total] = await this.performersRepository
       .createQueryBuilder('performer')
