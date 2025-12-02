@@ -1,0 +1,85 @@
+version: '3.8'
+
+services:
+  backend:
+    env_file:
+      - ./.env
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: heritage-backend
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=${DATABASE_URL:-postgresql://postgres:postgres@postgres:5432/heritage}
+      - JWT_SECRET=${JWT_SECRET:-supersecretkey}
+      - NODE_ENV=production
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - heritage-network
+    volumes:
+      - uploads:/app/uploads
+
+  web-app:
+    build:
+      context: ./web-app
+      dockerfile: Dockerfile
+    container_name: heritage-web-app
+    restart: always
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    networks:
+      - heritage-network
+
+  admin-dashboard:
+    build:
+      context: ./admin-dashboard
+      dockerfile: Dockerfile
+    container_name: heritage-admin-dashboard
+    restart: always
+    ports:
+      - "8081:80"
+    depends_on:
+      - backend
+    networks:
+      - heritage-network
+
+  postgres:
+    env_file:
+      - ./.env
+    image: postgres:15-alpine
+    container_name: heritage-postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=${DB_USER:-postgres}
+      - POSTGRES_PASSWORD=${DB_PASSWORD:-postgres}
+      - POSTGRES_DB=${DB_NAME:-heritage}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - pg_init:/docker-entrypoint-initdb.d
+    networks:
+      - heritage-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-postgres}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # MinIO removed per user request - no external S3 emulation
+
+networks:
+  heritage-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  uploads:
+  pg_init:
+  # minio_data: (removed)
